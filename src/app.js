@@ -2,6 +2,9 @@ import 'dotenv/config'
 import express from "express"
 import mongoose from 'mongoose'
 
+// import __dirname from "./path.js"
+import indexRouter from "./routes/index.router.js"
+
 
 // Inicialización de servidor express, asignación de puerto y ruta de BDD /////
 const app = express()
@@ -28,8 +31,8 @@ connectToMongoDB()
 
 
 // Rutas //////////////////////////////////////////////////////////////////////
-
-
+// app.use("/public", express.static(__dirname + "/public"))
+app.use("/", indexRouter)
 
 
 app.listen(PORT, () => {

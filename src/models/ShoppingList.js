@@ -3,7 +3,8 @@ import { Schema, model } from "mongoose"
 const ShoppingListSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     items: [{
         name: {
